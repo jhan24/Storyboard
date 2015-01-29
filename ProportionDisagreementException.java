@@ -14,7 +14,8 @@
  * resize to work - otherwise results will be skewed. The exception will
  * only result in a warning, not in a program termination.
  *
- * Check for where the warning occurs by using breakpoints.
+ * The warning will also print the time of the event that caused this
+ * warning.
  *
  * Changelog:
  * 1/24/2015: Exception created.
@@ -25,10 +26,11 @@
 
 public class ProportionDisagreementException extends Exception {
 
-    public ProportionDisagreementException() {
+    public ProportionDisagreementException(int time) {
         super("WARNING: The length and height of an object " +
                 "does not match its original proportions when a " +
-                "normal scale event occurred. This may result in " +
-                "skewed proportions and unintended results.");
+                "normal scale event occurred.\nThis may result in " +
+                "skewed proportions and unintended results. This warning " +
+                "occurred at time " + time + ".");
     }
 }

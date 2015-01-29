@@ -78,7 +78,7 @@ public class Writer {
         try {
             writer = new PrintWriter(fileName);
         } catch (Exception e) {
-            System.out.println("File Error!");
+            System.out.println("File Error! Check your file name/conventions.");
         }
         backingArray = new ArrayList<Storyboard>();
         writer.println("[Events]");
