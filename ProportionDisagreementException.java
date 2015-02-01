@@ -15,7 +15,7 @@
  * only result in a warning, not in a program termination.
  *
  * The warning will also print the time of the event that caused this
- * warning.
+ * warning
  *
  * Changelog:
  * 1/24/2015: Exception created.
