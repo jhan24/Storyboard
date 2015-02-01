@@ -355,7 +355,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void fade(int easing, int startTime, int endTime, double startOpacity,
                      double endOpacity) {
-        FadeEvent fade = new FadeEvent(easing, startTime, endTime, startOpacity,
+        StoryboardEvent fade = new FadeEvent(easing, startTime, endTime, startOpacity,
                 endOpacity);
         addToCompilation(fade, false);
     }
@@ -373,7 +373,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void fade(int easing, int startTime, int endTime,
                      double endOpacity) {
-        FadeEvent fade = new FadeEvent(easing, startTime, endTime, 0,
+        StoryboardEvent fade = new FadeEvent(easing, startTime, endTime, 0,
                 endOpacity);
         addToCompilation(fade, true);
     }
@@ -414,7 +414,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void move(int easing, int startTime, int endTime, int startX,
                      int startY, int endX, int endY) {
-        MoveEvent move = new MoveEvent(easing, startTime, endTime, startX,
+        StoryboardEvent move = new MoveEvent(easing, startTime, endTime, startX,
                 startY, endX, endY);
         addToCompilation(move, false);
     }
@@ -437,7 +437,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param endY      the ending Y position
      */
     public void move(int easing, int startTime, int endTime, int endX, int endY) {
-        MoveEvent move = new MoveEvent(easing, startTime, endTime, 0,
+        StoryboardEvent move = new MoveEvent(easing, startTime, endTime, 0,
                 0, endX, endY);
         addToCompilation(move, true);
     }
@@ -454,7 +454,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void moveX(int easing, int startTime, int endTime, int startX,
                       int endX) {
-        MoveXEvent move = new MoveXEvent(easing, startTime, endTime,
+        StoryboardEvent move = new MoveXEvent(easing, startTime, endTime,
                 startX, endX);
         addToCompilation(move, true);
     }
@@ -471,7 +471,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void moveX(int easing, int startTime, int endTime,
                       int endX) {
-        MoveXEvent move = new MoveXEvent(easing, startTime, endTime,
+        StoryboardEvent move = new MoveXEvent(easing, startTime, endTime,
                 0, endX);
         addToCompilation(move, true);
     }
@@ -488,7 +488,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void moveY(int easing, int startTime, int endTime, int startY,
                       int endY) {
-        MoveYEvent move = new MoveYEvent(easing, startTime, endTime,
+        StoryboardEvent move = new MoveYEvent(easing, startTime, endTime,
                 startY, endY);
         addToCompilation(move, true);
     }
@@ -505,7 +505,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void moveY(int easing, int startTime, int endTime,
                       int endY) {
-        MoveYEvent move = new MoveYEvent(easing, startTime, endTime,
+        StoryboardEvent move = new MoveYEvent(easing, startTime, endTime,
                 0, endY);
         addToCompilation(move, true);
     }
@@ -545,7 +545,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void scale(int easing, int startTime, int endTime, double startScaling,
                       double endScaling) {
-        ScaleEvent scale = new ScaleEvent(easing, startTime, endTime,
+        StoryboardEvent scale = new ScaleEvent(easing, startTime, endTime,
                 startScaling, endScaling);
         addToCompilation(scale, false);
     }
@@ -569,7 +569,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void scale(int easing, int startTime, int endTime,
                       double endScaling) {
-        ScaleEvent scale = new ScaleEvent(easing, startTime, endTime,
+        StoryboardEvent scale = new ScaleEvent(easing, startTime, endTime,
                 0, endScaling);
         addToCompilation(scale, true);
     }
@@ -610,7 +610,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void vectorScale(int easing, int startTime, int endTime, double startX,
                             double startY, double endX, double endY) {
-        VectorEvent scale = new VectorEvent(easing, startTime, endTime,
+        StoryboardEvent scale = new VectorEvent(easing, startTime, endTime,
                 startX, startY, endX, endY);
         addToCompilation(scale, false);
     }
@@ -628,7 +628,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param endY      the final vertical scale factor
      */
     public void vectorScale(int easing, int startTime, int endTime, double endX, double endY) {
-        VectorEvent scale = new VectorEvent(easing, startTime, endTime,
+        StoryboardEvent scale = new VectorEvent(easing, startTime, endTime,
                 0, 0, endX, endY);
         addToCompilation(scale, true);
     }
@@ -661,7 +661,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void rotate(int easing, int startTime, int endTime, double startAngle,
                        double endAngle) {
-        RotationEvent rotate = new RotationEvent(easing, startTime, endTime,
+        StoryboardEvent rotate = new RotationEvent(easing, startTime, endTime,
                 startAngle, endAngle);
         addToCompilation(rotate, false);
     }
@@ -679,7 +679,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void rotate(int easing, int startTime, int endTime,
                        double endAngle) {
-        RotationEvent rotate = new RotationEvent(easing, startTime, endTime,
+        StoryboardEvent rotate = new RotationEvent(easing, startTime, endTime,
                 0, endAngle);
         addToCompilation(rotate, true);
     }
@@ -717,7 +717,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      */
     public void color(int easing, int startTime, int endTime, int r1, int g1,
                       int b1, int r2, int g2, int b2) {
-        ColorEvent color = new ColorEvent(easing, startTime, endTime,
+        StoryboardEvent color = new ColorEvent(easing, startTime, endTime,
                 r1, g1, b1, r2, g2, b2);
         addToCompilation(color, false);
     }
@@ -734,7 +734,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param b2        the final blue value of RGB
      */
     public void color(int easing, int startTime, int endTime, int r2, int g2, int b2) {
-        ColorEvent color = new ColorEvent(easing, startTime, endTime,
+        StoryboardEvent color = new ColorEvent(easing, startTime, endTime,
                 0, 0, 0, r2, g2, b2);
         addToCompilation(color, false);
     }
@@ -763,7 +763,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param endTime   the time that this event ends
      */
     public void flipH(int easing, int startTime, int endTime) {
-        ParameterEvent param = new ParameterEvent(easing, startTime, endTime,
+        StoryboardEvent param = new ParameterEvent(easing, startTime, endTime,
                 "H");
         addToCompilation(param, false);
     }
@@ -778,7 +778,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param endTime   the time that this event ends
      */
     public void flipV(int easing, int startTime, int endTime) {
-        ParameterEvent param = new ParameterEvent(easing, startTime, endTime,
+        StoryboardEvent param = new ParameterEvent(easing, startTime, endTime,
                 "V");
         addToCompilation(param, false);
     }
@@ -794,7 +794,7 @@ public abstract class Storyboard implements Comparable<Storyboard> {
      * @param endTime   the time that this event ends
      */
     public void additive(int easing, int startTime, int endTime) {
-        ParameterEvent param = new ParameterEvent(easing, startTime, endTime,
+        StoryboardEvent param = new ParameterEvent(easing, startTime, endTime,
                 "A");
         addToCompilation(param, false);
     }
